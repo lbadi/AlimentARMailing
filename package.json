@@ -1,0 +1,29 @@
+{
+  "name": "alimentar_mailing",
+  "version": "1.0.0",
+  "description": "Simple mailing system for alimentar project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbadi/AlimentARMailing.git"
+  },
+  "keywords": [
+    "AlimentAR",
+    "mailing"
+  ],
+  "author": "Leonel Badi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbadi/AlimentARMailing/issues"
+  },
+  "homepage": "https://github.com/lbadi/AlimentARMailing#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mailgun-js": "^0.7.12"
+  }
+}
