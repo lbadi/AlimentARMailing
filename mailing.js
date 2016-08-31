@@ -5,10 +5,10 @@ var mailgun = require('mailgun-js')({apiKey: config.api_key, domain: config.doma
 
 /**
 ** Endpoint that send contact information to the configured email.
-** Receive name,email,rol, comment(optional).
+** Receive name,email,user_type, comment(optional).
 **/
 router.post('/', function(req,res){
-  if(!req.body.name || !req.body.email || !req.body.rol){
+  if(!req.body.name || !req.body.email || !req.body.user_type){
     res.status(400).send();
     return;
   }
@@ -16,7 +16,7 @@ router.post('/', function(req,res){
     from: req.body.name + '<no-reply@notifications.proyectoalimentar.org>',
     to: config.email,
     subject: 'Contacto de: ' + req.body.name,
-    text: 'Email : ' + req.body.email + '\nRol: ' + req.body.rol + '\nComentario: ' + req.body.comment,
+    text: 'Email : ' + req.body.email + '\nTipo de Usuario: ' + req.body.user_type + '\nComentario: ' + req.body.comment,
   };
 
   mailgun.messages().send(data, function (error, body) {
