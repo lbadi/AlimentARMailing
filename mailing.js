@@ -13,10 +13,10 @@ router.post('/', function(req,res){
     return;
   }
   var data = {
-    from: req.body.name + '<no-reply@proyectoalimentar.org>',
+    from: req.body.name + '<no-reply@notifications.proyectoalimentar.org>',
     to: config.email,
     subject: 'Contacto de: ' + req.body.name,
-    text: 'Email : ' + req.body.email + '\nComentario: ' + req.body.comment,
+    text: 'Email : ' + req.body.email + '\nRol: ' + req.body.rol + '\nComentario: ' + req.body.comment,
   };
 
   mailgun.messages().send(data, function (error, body) {
